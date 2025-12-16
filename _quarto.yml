@@ -2,11 +2,16 @@ project:
   type: default
   output-dir: _site
   execute-dir: project
+  render:
+    - index.qmd
 
-# METADATA_PLACEHOLDER
+title: "Quarto Revealjs Demo"
+subtitle: "Showcasing useful plugins"
+author: "Demo Presentation"
 
 format:
   revealjs:
+    output-file: slides.html
     theme: [default, custom.scss]
     slide-number: true
     code-line-numbers: true
@@ -15,17 +20,20 @@ format:
         header: "<div class='menubar'><ul class='menu'></ul></div>"
       flat: false
       scale: 0.67
-
-filters:
-  - reveal-auto-agenda
-  - code-fullscreen
-
-revealjs-plugins:
-  - simplemenu
-  - codefocus
-
-auto-agenda:
-  bullets: numbered
-  heading: Agenda
-
-code-fullscreen: true
+    filters:
+      - reveal-auto-agenda
+      - code-fullscreen
+    revealjs-plugins:
+      - simplemenu
+      - codefocus
+    auto-agenda:
+      bullets: numbered
+      heading: Agenda
+    code-fullscreen: true
+  html:
+    output-file: index.html
+    toc: true
+    toc-depth: 2
+    theme: cosmo
+    code-fold: true
+    code-tools: true

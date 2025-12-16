@@ -1,5 +1,117 @@
-{{< include chapters/01-introduction.qmd >}}
-{{< include chapters/02-fullscreen.qmd >}}
-{{< include chapters/03-codefocus.qmd >}}
-{{< include chapters/04-combined.qmd >}}
-{{< include chapters/05-summary.qmd >}}
+# Introduction {data-stack-name="Intro"}
+
+## Welcome
+
+This presentation demonstrates four useful Quarto revealjs plugins:
+
+1. **reveal-auto-agenda** - Auto-generates agenda slides
+2. **code-fullscreen** - Fullscreen code blocks
+3. **codeFocus** - Highlight code lines progressively
+
+# Code Fullscreen Demo {data-stack-name="Fullscreen"}
+
+## Basic Code Block
+
+Click the expand icon (top-right) to view fullscreen:
+
+```{.python}
+import pandas as pd
+import numpy as np
+
+# Create sample data
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'Diana'],
+    'age': [25, 30, 35, 28],
+    'city': ['Tokyo', 'Paris', 'London', 'Berlin']
+}
+
+df = pd.DataFrame(data)
+print(df)
+```
+
+# CodeFocus Demo {data-stack-name="CodeFocus"}
+
+## CodeFocus with Explanations
+
+```python
+import requests
+
+api_url = "https://api.example.com/data"
+headers = {"Authorization": "Bearer token"}
+
+response = requests.get(api_url, headers=headers)
+data = response.json()
+```
+
+::: {.fragment .current-only data-code-focus="1-2"}
+First, we import the required libraries for HTTP requests and JSON handling.
+:::
+
+::: {.fragment .current-only data-code-focus="4-5"}
+Define the API endpoint URL and authentication headers.
+:::
+
+::: {.fragment .current-only data-code-focus="7-8"}
+Make the GET request and parse the JSON response.
+:::
+
+## Another CodeFocus Example
+
+Progressive code reveal:
+
+```{.r code-line-numbers="1-2|4-7|9-12"}
+# Load libraries
+library(tidyverse)
+
+# Read and clean data
+data <- read_csv("data.csv") %>%
+  filter(!is.na(value)) %>%
+  mutate(category = as.factor(category))
+
+# Create visualization
+ggplot(data, aes(x = category, y = value)) +
+  geom_boxplot(fill = "steelblue") +
+  theme_minimal()
+```
+
+# Combined Features {data-stack-name="Combined"}
+
+## Full Example
+
+This code block has both fullscreen and line highlighting:
+
+```{.javascript code-line-numbers="1-3|5-10|12-16"}
+// Configuration
+const config = {
+  apiKey: process.env.API_KEY,
+};
+
+// Async data fetching
+async function fetchData(endpoint) {
+  const response = await fetch(endpoint);
+  const data = await response.json();
+  return data;
+}
+
+// Main execution
+fetchData("/api/users")
+  .then((users) => console.log(users))
+  .catch((err) => console.error(err));
+```
+
+# Summary {data-stack-name="Summary"}
+
+## What We Covered
+
+| Plugin | Feature |
+|--------|---------|
+| auto-agenda | Auto-generated agenda from headers |
+| code-fullscreen | Expand code to fullscreen |
+| codeFocus | Progressive line highlighting |
+| simplemenu | Navigation menu bar |
+
+## Thank You!
+
+Check the menu bar at the top for quick navigation.
+
+Press `?` for keyboard shortcuts.

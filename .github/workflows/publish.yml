@@ -24,11 +24,8 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Build slides
-        run: make slides
-
-      - name: Build book
-        run: make book
+      - name: Build
+        run: make render
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
