@@ -1,0 +1,5 @@
+{{< include chapters/01-introduction.qmd >}}
+{{< include chapters/02-fullscreen.qmd >}}
+{{< include chapters/03-codefocus.qmd >}}
+{{< include chapters/04-combined.qmd >}}
+{{< include chapters/05-summary.qmd >}}

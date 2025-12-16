@@ -1,0 +1,31 @@
+project:
+  type: default
+  output-dir: _site
+  execute-dir: project
+
+# METADATA_PLACEHOLDER
+
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    code-line-numbers: true
+    simplemenu:
+      barhtml:
+        header: "<div class='menubar'><ul class='menu'></ul></div>"
+      flat: false
+      scale: 0.67
+
+filters:
+  - reveal-auto-agenda
+  - code-fullscreen
+
+revealjs-plugins:
+  - simplemenu
+  - codefocus
+
+auto-agenda:
+  bullets: numbered
+  heading: Agenda
+
+code-fullscreen: true

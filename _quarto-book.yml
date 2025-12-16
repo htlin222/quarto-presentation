@@ -1,0 +1,19 @@
+project:
+  type: book
+  output-dir: _site/book
+
+# METADATA_PLACEHOLDER
+
+book:
+  chapters:
+    - index.qmd
+    - chapters/01-introduction.qmd
+    - chapters/02-fullscreen.qmd
+    - chapters/03-codefocus.qmd
+    - chapters/04-combined.qmd
+    - chapters/05-summary.qmd
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-line-numbers: true

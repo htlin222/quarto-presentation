@@ -1,0 +1,8 @@
+# Preface {.unnumbered}
+
+This book demonstrates useful Quarto revealjs plugins:
+
+- **reveal-auto-agenda** - Auto-generates agenda slides
+- **code-fullscreen** - Fullscreen code blocks
+- **codeFocus** - Highlight code lines progressively
+- **simplemenu** - Navigation menu bar
