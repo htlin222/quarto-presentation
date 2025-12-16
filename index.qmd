@@ -10,6 +10,10 @@ This presentation demonstrates four useful Quarto revealjs plugins:
 
 # Code Fullscreen Demo {data-stack-name="Fullscreen"}
 
+## a pic
+
+![your name hereeeee is goodd](https://iili.io/fcBbKAb.png)
+
 ## Basic Code Block
 
 Click the expand icon (top-right) to view fullscreen:

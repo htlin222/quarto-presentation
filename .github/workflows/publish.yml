@@ -25,7 +25,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Build
-        run: make render
+        run: make deploy
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
