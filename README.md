@@ -1,68 +1,61 @@
-# Quarto revealjs presentation template
+# Quarto Revealjs Presentation Template
 
-A modular Quarto presentation template with reveal.js plugins. Builds slides and HTML book.
+A Quarto presentation template with reveal.js plugins. Outputs both slides and HTML page with TOC.
+
+**Live Demo:** [htlin.github.io/quarto-presentation](https://htlin.github.io/quarto-presentation/)
 
 ## Features
 
-- `reveal-auto-agenda` - Generates agenda slides
+- **reveal-auto-agenda** - Generates agenda slides automatically
 - **code-fullscreen** - Fullscreen button for code blocks
 - **codeFocus** - Progressive code line highlighting with explanations
 - **simplemenu** - Navigation menu bar for sections
 
-## Project structure
+## Project Structure
 
 ```
 .
-├── _metadata.yml        # Shared metadata (title, author) - edit this
-├── _quarto.yml          # Slides configuration
-├── _quarto-book.yml     # Book configuration
-├── index.qmd            # Main entry (generated includes)
-├── chapters/            # Modular slide content
-│   └── *.qmd
+├── index.qmd            # Main content
+├── _quarto.yml          # Configuration (title, author, formats)
 ├── custom.scss          # Custom theme styles
-├── Makefile             # Build automation
+├── makefile             # Build automation
 └── .github/workflows/   # GitHub Actions (auto-deploy)
 ```
 
-## Quick start
+## Quick Start
 
 ```bash
-# Build both slides and book
+# Build both formats (slides.html + index.html)
 make
-
-# Build slides only → _site/
-make slides
-
-# Build book only → _site/book/
-make book
 
 # Live preview with auto-reload
 make preview
 
-# Update index after adding/removing sections
-make index
+# Build for deployment
+make deploy
 
-# Clean output directories
+# Clean output files
 make clean
 ```
+
+## Output
+
+| File          | Description           | URL                                   |
+| ------------- | --------------------- | ------------------------------------- |
+| `index.html`  | HTML page with TOC    | `username.github.io/repo/`            |
+| `slides.html` | Revealjs presentation | `username.github.io/repo/slides.html` |
 
 ## Customization
 
 ### Change title or author
 
-Edit `_metadata.yml`:
+Edit `_quarto.yml`:
 
 ```yaml
 title: "Your Presentation Title"
 subtitle: "Your Subtitle"
 author: "Your Name"
 ```
-
-### Add a section
-
-1. Create file in `chapters/` (for example, `chapters/06-newchapter.qmd`)
-2. Run `make index` to update includes
-3. Run `make` to build
 
 ### Section format
 
@@ -76,16 +69,16 @@ Each section should start with a level-1 heading with `data-stack-name` for simp
 Content here...
 ```
 
-### Codefocus usage
+### CodeFocus usage
 
 ````markdown
 ## Slide with CodeFocus
 
-\```python
+```python
 import requests
 response = requests.get(url)
 data = response.json()
-\```
+```
 
 ::: {.fragment .current-only data-code-focus="1"}
 Import the requests library.
@@ -96,25 +89,18 @@ Make request and parse JSON.
 :::
 ````
 
-## Output
-
-| Command       | Output                  | Address (GitHub Pages)          |
-| ------------- | ----------------------- | ------------------------------- |
-| `make slides` | `_site/index.html`      | `username.github.io/repo/`      |
-| `make book`   | `_site/book/index.html` | `username.github.io/repo/book/` |
-
 ## Deploy
 
 Automated via GitHub Actions. On push to `main`:
 
-1. Builds slides → `_site/`
-2. Builds book → `_site/book/`
+1. Builds both formats
+2. Copies to `_site/`
 3. Deploys to GitHub Pages
 
-Setup:
+### Setup GitHub Pages
 
-1. Go to repo Settings → Pages
-2. Set Source to "GitHub Actions"
+1. Go to repo **Settings** → **Pages**
+2. Set Source to **GitHub Actions**
 3. Push to `main` branch
 
 ## Requirements
