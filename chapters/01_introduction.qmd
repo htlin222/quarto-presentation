@@ -1,0 +1,10 @@
+# Introduction {data-stack-name="Intro"}
+
+## Welcome
+
+This presentation demonstrates four useful Quarto revealjs plugins:
+
+1. **reveal-auto-agenda** - Auto-generates agenda slides
+2. **code-fullscreen** - Fullscreen code blocks
+3. **codeFocus** - Highlight code lines progressively
+

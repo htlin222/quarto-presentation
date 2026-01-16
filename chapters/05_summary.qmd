@@ -1,0 +1,16 @@
+# Summary {data-stack-name="Summary"}
+
+## What We Covered
+
+| Plugin | Feature |
+|--------|---------|
+| auto-agenda | Auto-generated agenda from headers |
+| code-fullscreen | Expand code to fullscreen |
+| codeFocus | Progressive line highlighting |
+| simplemenu | Navigation menu bar |
+
+## Thank You!
+
+Check the menu bar at the top for quick navigation.
+
+Press `?` for keyboard shortcuts.

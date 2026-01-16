@@ -1,0 +1,53 @@
+# Code Fullscreen Demo {data-stack-name="Fullscreen"}
+
+## a pic
+
+![your name hereeeee is goodd](https://iili.io/fcBbKAb.png)
+
+::: aside
+Some additional commentary of more peripheral interest.
+:::
+
+## {auto-animate="true"}
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+  # Render a barplot
+})
+```
+
+## {auto-animate=true}
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+  # Render a barplot
+  barplot(
+    WorldPhones[, input$region] * 1000,
+    main = input$region,
+    ylab = "Number of Telephones",
+    xlab = "Year"
+  )
+})
+```
+
+## Basic Code Block
+
+Click the expand icon (top-right) to view fullscreen:
+
+```{.python}
+import pandas as pd
+import numpy as np
+
+# Create sample data
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'Diana'],
+    'age': [25, 30, 35, 28],
+    'city': ['Tokyo', 'Paris', 'London', 'Berlin']
+}
+
+df = pd.DataFrame(data)
+print(df)
+```
+
