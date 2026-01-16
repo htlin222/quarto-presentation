@@ -103,9 +103,45 @@ Automated via GitHub Actions. On push to `main`:
 2. Set Source to **GitHub Actions**
 3. Push to `main` branch
 
+## Modular Chapters
+
+For large presentations, split content into separate chapter files:
+
+```bash
+# Split index.qmd by H1 headers into chapters/
+./combine.sh split
+
+# Watch chapters/ and auto-combine on changes
+./combine.sh watch
+
+# One-time combine (no watch)
+./combine.sh combine
+```
+
+### Workflow
+
+1. Run `./combine.sh split` to create section files
+2. Run `./combine.sh watch &` in background
+3. Edit files in `chapters/` (for example, `01_introduction.qmd`)
+4. Changes merge automatically into `index.qmd`
+5. Run `make preview` for live reload
+
+### Structure
+
+```
+chapters/
+├── 01_introduction.qmd
+├── 02_code-fullscreen-demo.qmd
+├── 03_codefocus-demo.qmd
+└── ...
+```
+
+Files are named `NN_slug-name.qmd` based on H1 headers. All config stays in `_quarto.yml`.
+
 ## Requirements
 
 - [Quarto](https://quarto.org/) ≥ 1.3
+- [fswatch](https://github.com/emcrisostomo/fswatch) (for watch mode): `brew install fswatch`
 
 ## License
 
