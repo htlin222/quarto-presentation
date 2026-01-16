@@ -40,5 +40,5 @@ renv/staging/
 # OS
 .DS_Store
 Thumbs.db
-new_folder/*
-!new_folder/
+reference*/*
+!reference*/
